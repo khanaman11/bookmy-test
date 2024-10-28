@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #070b28;
+  font-family: 'Arial', sans-serif;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: #5187ff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  animation: slide-in 1s ease forwards;
+  opacity: 0;
+}
+
+.form-box h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #ef7212;
+}
+
+.input-box {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  background: transparent;
+  transition: 0.3s;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: #aaa;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.input-box input:focus,
+.input-box input:valid {
+  border-color: #3498db;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -10px;
+  left: 10px;
+  font-size: 0.85rem;
+  color: #3498db;
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.remember-forgot a {
+  text-decoration: none;
+  color: #3498db;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(270deg, rgb(255, 162, 73) 0%, rgb(158, 0, 246) 100%);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition:  0.3s;
+}
+
+.login-btn:hover {
+  background-color: #2980b9;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.register-link a {
+  text-decoration: none;
+  color: #3498db;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+  .login-container {
+    padding: 1.5rem;
+  }
+
+  .form-box h2 {
+    font-size: 1.5rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+<div class="login-container">
+  <div class="form-box">
+    <h2>Login</h2>
+    <form action="#" class="login-form">
+      <div class="input-box">
+        <input type="text" required>
+        <label>Username</label>
+      </div>
+      <div class="input-box">
+        <input type="password" required>
+        <label>Password</label>
+      </div>
+      <div class="remember-forgot">
+        <label><input type="checkbox"> Remember me</label>
+        <a href="#">Forgot password?</a>
+      </div>
+      <button type="submit" class="login-btn">Login</button>
+      <div class="register-link">
+        <p>Don't have an account? <a href="#">Sign up</a></p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
